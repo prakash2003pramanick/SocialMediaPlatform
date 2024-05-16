@@ -1,0 +1,6 @@
+We will have a save sttings button and on clicking the save stting the profile settings will be updated to reduce the traffic.
+In the frontend take care that if the user tries to close the tab, switch a tab, navigates to other locatino in the app or close the entire browser without hitting the save setting then if it is possible give a warning that you have not saved the settings.
+
+the societies needs to acknowledge the members \
+
+before making any update hit to the database always check if the new data is not equal to the existing data the only make a hit to the database otehrwise reject the request in the frontend only 

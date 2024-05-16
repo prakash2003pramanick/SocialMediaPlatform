@@ -1,0 +1,50 @@
+backend/
+│
+├── controllers/              <-- Contains controller files for handling business logic
+│   ├── authController.js     <-- Controller for authentication-related logic
+│   ├── userController.js     <-- Controller for user-related logic
+│   ├── friendshipController.js   <-- Controller for friendship-related logic
+│   ├── postController.js     <-- Controller for post-related logic
+│   ├── notificationController.js   <-- Controller for notification-related logic
+│   ├── searchController.js   <-- Controller for search-related logic
+│   ├── messageController.js  <-- Controller for message-related logic
+│   ├── analyticsController.js    <-- Controller for analytics-related logic
+│   └── adminController.js    <-- Controller for admin-related logic
+│
+├── models/                   <-- Contains Mongoose schema files for defining data models
+│   ├── User.js               <-- Schema for User model
+│   └── Post.js               <-- Schema for Post model
+│
+├── routes/                   <-- Contains route files for defining API endpoints
+│   ├── authRoutes.js         <-- Define authentication routes here
+│   ├── userRoutes.js         <-- Define user-related routes here
+│   ├── friendshipRoutes.js   <-- Define friendship-related routes here
+│   ├── postRoutes.js         <-- Define post-related routes here
+│   ├── notificationRoutes.js    <-- Define notification-related routes here
+│   ├── searchRoutes.js       <-- Define search-related routes here
+│   ├── messageRoutes.js      <-- Define message-related routes here
+│   ├── analyticsRoutes.js    <-- Define analytics-related routes here
+│   └── adminRoutes.js        <-- Define admin-related routes here
+│
+├── middleware/               <-- Contains middleware functions for request processing
+│   ├── authMiddleware.js     <-- Middleware for authentication
+│   ├── validationMiddleware.js   <-- Middleware for request validation
+│   ├── rateLimitMiddleware.js    <-- Middleware for rate limiting
+│   └── errorMiddleware.js    <-- Middleware for error handling
+│
+├── utils/                    <-- Contains utility files for helper functions or services
+│   ├── emailService.js       <-- Service for sending emails
+│   └── jwtService.js         <-- Service for handling JWT tokens
+│
+├── config/                   <-- Contains configuration files for application settings
+│   ├── dbConfig.js           <-- Configuration for database connection
+│   ├── jwtConfig.js          <-- Configuration for JWT token settings
+│   └── mailConfig.js         <-- Configuration for email settings
+│
+├── app.js                    <-- Entry point of the application
+├── package.json              <-- Metadata and dependencies of the application
+└── .env                      <-- Environment variables (not visible in the structure)
+
+//if any port is not available 
+lsof -i :5000 -- look for process using this port now, you will get the pid
+kill <pid> 

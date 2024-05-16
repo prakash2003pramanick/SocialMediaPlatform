@@ -1,0 +1,66 @@
+1) Register/ Create a new User
+API : http://localhost:8000/api/auth/register
+Mehtod: Post
+Headers:
+Content-type:application/json
+Body:
+{
+    "fname": "Pritanshu",
+    "lname": "Singh",
+    "profilephoto": "",
+    "gender": "Male",
+    "email": "prityanshu1@gmail.com",
+    "bio": "Software engineer passionate about technology.",
+    "phoneNo": "+1234567890",
+    "password": "123",
+    "interests": ["Programming", "Web Development"],
+    "visibility": {
+        "public": true,
+        "userName": true,
+        "bio": true,
+        "hobbies": true,
+        "project": true,
+        "branch": true,
+        "semester": true,
+        "section": true,
+        "socialmedia": true,
+        "societies": true
+    },
+    "socialmedia": {
+        "linkedin": "https://linkedin.com/johndoe",
+        "instagram": "https://instagram.com/johndoe",
+        "facebook": "https://facebook.com/johndoe",
+        "github": "https://github.com/johndoe",
+        "website": "https://johndoe.com"
+    },
+    "societies": ["Tech Club", "Programming Society"],
+    "skills": ["JavaScript", "HTML", "CSS"],
+    "hobbies": ["Aamkhana", "nashekarna"],
+    "projects": ["Personal Portfolio Website", "Online Store Application"]
+}
+
+2) login
+API :- http://localhost:8000/api/auth/login
+method:post
+header : 
+Content-type:application/json
+
+body:
+{
+    "email": "prityanshu1@gmail.com",
+    "password": "123"
+}
+
+
+3) update an existing user
+API :- http://localhost:8000/api/user/update-profile
+method:put
+header : 
+Content-type:application/json
+Authorization : <JWT token>
+body:
+{   
+    "fname":"this is new fname",
+    "lname":"after update",
+    "interests":["new interest","old interests"]
+}

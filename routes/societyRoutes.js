@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { getSocietyProfile, updateSocietyProfile, deleteSocietyProfile } = require('../controllers/societyController');
 const {verifyToken} = require('../middleware/verifyToken');
+const { getSocietyProfile, updateSocietyProfile, deleteSocietyProfile } = require('../controllers/societyController');
 
-
-
-// Society-as-a-User-related routes
+// Society-as-a-User related routes
 router.get('/get-profile', verifyToken, getSocietyProfile);
 
 router.put('/update-profile', verifyToken, updateSocietyProfile);

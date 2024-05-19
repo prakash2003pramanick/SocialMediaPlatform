@@ -64,3 +64,57 @@ body:
     "lname":"after update",
     "interests":["new interest","old interests"]
 }
+
+4) register a society
+API :- http://localhost:8000/auth/register-society
+method: post
+header : 
+Content-type:application/json
+Authorization : <JWT token>
+
+{
+    "name": "FED",
+    "headofsociety": "Avinash Pandey",
+    "profilephoto": "https://example.com/society.jpg",
+    "type": "Entrepreneurship",
+    "under":"TBI",
+
+    "email": "kiit@example.com",
+    "bio": "Description of the society 2",
+    "password": "society123",
+    "interests": ["Interest 2", "Interest 3"],
+
+    "visibility": {
+        "public": true,
+        "userName": true,
+        "bio": true,
+        "project": true,
+        "socialmedia": true
+    },
+
+    "socialmedia": {
+        "linkedin": "https://linkedin.com/fed",
+        "instagram": "https://instagram.com/fed",
+        "facebook": "https://facebook.com/fed",
+        "github": "https://github.com/fed",
+        "website": "https://fed.example.com",
+        "whatsapp_group": "https://chat.whatsapp.com/fedgroup",
+        "phone": 1234567890
+    }
+}
+
+
+5) create an event
+API :- http://localhost:8000/event/create-event
+method: post
+header : 
+Content-type:application/json
+Authorization : <JWT token>
+{
+    "name": "Tech Conference",
+    "posterphoto": "https://example.com/poster.jpg",
+    "desc": "Join us for an exciting tech conference featuring industry experts.",
+    "phoneNo": "1234567890",
+    "hyperlink": "https://example.com/tech-conference",
+    "visibility": "public"
+}

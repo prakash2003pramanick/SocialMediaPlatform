@@ -1,24 +1,33 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose; // Import Schema from mongoose
 
-const EventSchema = new Schema(
+const EventsSchema = new Schema(
     {
         name: String,
-        email: String, // event creator email
         host: {
+            type:{
+                type:Number,
+            },
             email: String,
-            soc_id: {type : Schema.Types.ObjectId, ref: 'Society'}
+            created_on : {type : Date, default : Date.now()},
         },
         posterphoto: String, // URL of the image
         desc: String,
-        phoneNo: String,
+        date_of_event : {type : Date, default : Date.now()},
+        poc:{
+            name:String,
+            phoneNo: String,
+            email:String,
+        },
         hyperlink: String, // registration link or link to website where the details of event are listed
-        visibility: { type: String, default: 'public' }
+        visibility: { type: String, default: 'public' , enum : ['public', 'members', 'private']},
+        tags:[String],
+        status : {type : String, default : "UPCOMING"}
     },
     {
-        collection: 'Event'
+        collection: 'events'
     }
 );
 
 // Pass the Model name and the schema to the model
-mongoose.model('Event', EventSchema);
+mongoose.model('events', EventsSchema);

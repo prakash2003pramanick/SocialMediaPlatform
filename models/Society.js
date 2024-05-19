@@ -9,9 +9,9 @@ const SocietiesSchema = new Schema(
         name: String,
         headofsociety: String,
         profilephoto: String, // URL of the image
-        type: String, // What type of socity it is 
+        type: String, // What type of socity it is ?
         under: String, // Organizaiton / Institue under which the society is registered
-        approvedbyadmin : { type : Boolean, default : false },
+        
 
         access : { type: Number, default: SOCIETY }, //Society type
 
@@ -48,7 +48,13 @@ const SocietiesSchema = new Schema(
             event_id : { type : Schema.Types.ObjectId, ref : "Event"}
         }],
 
-        projects: [String]
+        projects: [String],
+
+        approval: { 
+            status : {type : String, default : "pending"},
+            admin : {type : String, ref : 'admin'},
+            desc : {type : Schema.Types.ObjectId, ref : "admin_actions"}
+        },
     },
     {
         collection: "Society"

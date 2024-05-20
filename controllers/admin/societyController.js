@@ -1,8 +1,8 @@
 
-require('../models/Society');
+require('../../models/Society');
 const mongoose = require('mongoose');
 const Society = mongoose.model('Society');
-const { ADMIN } = require('../enum/accessTypes.js');
+const { ADMIN } = require('../../enum/accessTypes.js');
 
 
 // Function to approve a society
@@ -10,7 +10,7 @@ const approveSociety = async (req, res) => {
     try {
         
         // In case the user is not admin 
-        if(req.user.access != ADMIN){
+        if(req.user.access <= ADMIN){
             return res.status(403).send({ status: "FORBIDDDEN", message: "USER IS NOT ELIGIBLE FOR MAKING THESE CHANGES" });
         }
 
@@ -39,7 +39,7 @@ const refuseSociety = async (req, res) => {
     try {
         
         // In case the user is not admin 
-        if(req.user.access != ADMIN){
+        if(req.user.access <= ADMIN){
             return res.status(403).send({ status: "FORBIDDDEN", message: "USER IS NOT ELIGIBLE FOR MAKING THESE CHANGES" });
         }
 

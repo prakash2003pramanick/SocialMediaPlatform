@@ -12,7 +12,7 @@ const AdminSchema = new Schema(
 
         access : { type: Number, default: ADMIN },
         email: { type: String, unique: true },
-        personal_email: { type: String, unique: true },
+        personal_email: { type: String },
         role: [String],
         password: String,
 
@@ -22,12 +22,12 @@ const AdminSchema = new Schema(
             personl_email: { type: Boolean, default: false },
         },
 
-        actions : [{ type : Schema.Types.ObjectId, ref : "AdminActions" }],
+        actions : [{ type : Schema.Types.ObjectId, ref : "adminactions" }],
     },
     {
-        collection: "Admin"
+        collection: "admin"
     }
 );
 
 // Pass the Model name and the schema to the model
-mongoose.model("Admin", AdminSchema);
+mongoose.model("admin", AdminSchema);

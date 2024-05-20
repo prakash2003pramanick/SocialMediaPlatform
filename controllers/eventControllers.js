@@ -6,7 +6,7 @@ const Events = mongoose.model('events');
 const createEvent = async (req, res) => {
     try {
         // Check user's access level
-        if (req.user.access !== SOCIETY && req.user.access !== ADMIN) {
+        if (req.user.access !== SOCIETY && req.user.access > ADMIN) {
             return res.status(403).send({ status: "FORBIDDEN", message: "User is not eligible to create an event" });
         }
 
@@ -30,7 +30,7 @@ const createEvent = async (req, res) => {
 const updateEvent = async (req, res) => {
     try {
         // Check user's access level
-        if (req.user.access !== SOCIETY && req.user.access !== ADMIN) {
+        if (req.user.access !== SOCIETY && req.user.access > ADMIN) {
             return res.status(403).send({ status: "FORBIDDEN", message: "User is not eligible to create an event" });
         }
 
@@ -57,7 +57,7 @@ const updateEvent = async (req, res) => {
 const deleteEvent = async (req, res) => {
     try {
         // Check user's access level
-        if (req.user.access !== SOCIETY && req.user.access !== ADMIN) {
+        if (req.user.access !== SOCIETY && req.user.access > ADMIN) {
             return res.status(403).send({ status: "FORBIDDEN", message: "User is not eligible to create an event" });
         }
 
@@ -84,7 +84,7 @@ const deleteEvent = async (req, res) => {
 const getEvents = async (req, res) => {
     try {
         // Check user's access level
-        if (req.user.access !== SOCIETY && req.user.access !== ADMIN) {
+        if (req.user.access !== SOCIETY && req.user.access > ADMIN) {
             return res.status(403).send({ status: "FORBIDDEN", message: "User is not eligible to fetch event details" });
         }      
 

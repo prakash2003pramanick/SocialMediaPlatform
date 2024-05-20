@@ -66,8 +66,8 @@ const login = async (req, res) => {
 
     try {
         const user = await model.findOne({ email }, 'access password');
-        console.log(user);
-        console.log("useraccess is "+user.access);
+        // console.log("User details ", user);
+        // console.log("useraccess is "+user.access);
 
         if (!user) {
             console.log("user not found");

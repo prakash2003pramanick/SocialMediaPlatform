@@ -1,0 +1,50 @@
+Note : When logged in with super admin then only these tasks can be performed
+
+1) Create a new Admin
+API : http://localhost:8000/admin/create-admin
+Heeaders : 
+content-type : application/json
+Authorization : <jwt token>
+Method : Post
+{
+    "username": "admin3",
+    "name": "Vinit Agarwal",
+    "profilephoto": "https://example.com/profile.jpg",
+    "access":"5",
+    "email": "admin3@social.com",
+    "personal_email": "vinit@gmail.com",
+    "role": ["admin", "moderator"],
+    "password": "123",
+    "visibility": {
+        "public": true,
+        "username": true,
+        "personal_email": false
+    }
+}
+
+2) Update an admin
+API : http://localhost:8000/admin/create-admin
+Heeaders : 
+content-type : application/json
+Authorization : <jwt token>
+Method : Post
+{
+    "adminId":"664b9ec914d1fead97b2c34e",
+    "newData":{
+        "username": "admin2",
+        "name": "Prakash Pramanick",
+        "profilephoto": "https://example.com/profile.jpg",
+        "email": "admin2@social.com",
+        "personal_email": "prakash@gmail.com",
+        "role": ["admin", "moderator"],
+        "password": "123",
+        "visibility": {
+            "public": true,
+            "username": true,
+            "personal_email": false
+        }
+    }
+}
+
+
+3) Delete an admin

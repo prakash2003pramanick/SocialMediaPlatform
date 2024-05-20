@@ -55,7 +55,10 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-    const { email, password , type} = req.body;
+    const { type, email, password} = req.body;
+    if(!type || !email || !password){
+        return res.status(400).json({ error: 'Missing required fields : type, email, password' });
+    }
     console.log(type);
     console.log(email);
     console.log(password);
@@ -78,7 +81,7 @@ const login = async (req, res) => {
         }
         
         //generate the JWT Token
-        const token = jwt.sign({ email : user.email, access : user.access }, process.env.JWT_SECRET);
+        const token = jwt.sign({ email, access : user.access }, process.env.JWT_SECRET);
         console.log(token);
         return res.send({ status: "OK", message:"LOGGED IN", data:token });
 

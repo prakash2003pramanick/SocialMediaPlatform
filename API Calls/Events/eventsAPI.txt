@@ -1,0 +1,45 @@
+5) create an event
+API :- http://localhost:8000/event/create-event
+method: post
+header : 
+Content-type:application/json
+Authorization : <JWT token>
+{
+    "name": "Event 5",
+    "posterphoto": "https://example.com/poster.jpg",
+    "desc": "edited Description of the event",
+    "date_of_event": "2024-05-20T15:00:00Z",
+    "hyperlink": "https://example.com/event-details",
+    "visibility": "public",
+    "tags": ["tag1", "tag2"],
+    "poc":{
+        "name":"prakash",
+        "phoneNo": "1234567890",
+        "email":"xyz@kiit.ac.in"
+    }
+    
+}
+
+6) udpate an event
+API :- http://localhost:8000/event/udpate-event
+method: post
+header : 
+Content-type:application/json
+Authorization : <JWT token>
+{
+    "eventId":"664607f54a149e616e228c28",
+    "newData" : {
+        "name": "Tech Conference",
+        "posterphoto": "https://example.com/poster.jpg",
+        "desc": "Join us for an exciting tech conference featuring industry experts.",
+        "phoneNo": "1234567890",
+        "hyperlink": "https://example.com/tech-conference",
+        "visibility": "public"
+    } 
+}
+
+7) Delete an event
+method : delete
+API :- http://localhost:8000/event/delete-event/<objectID>
+
+8) Fetch all details of the event created by any ID

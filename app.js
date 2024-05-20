@@ -3,10 +3,6 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const connectDB = require('./config/dbConfig');
-
-
-
-// Middleware
 app.use(express.json());
 app.use(cors());
 
@@ -17,7 +13,13 @@ connectDB();
 // User related routes
 app.use('/auth', require('./routes/authRoutes'));
 app.use('/user', require('./routes/userRoutes'));
+
+//Society related routes
 app.use('/society',require('./routes/societyRoutes'));
+
+//Event related routes
+app.use('/event',require('./routes/eventRoutes'));
+
 // Admin related routes
 app.use('/admin',require('./routes/adminRoutes'));
 

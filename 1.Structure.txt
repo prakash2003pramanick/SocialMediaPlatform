@@ -48,3 +48,9 @@ backend/
 //if any port is not available 
 lsof -i :5000 -- look for process using this port now, you will get the pid
 kill <pid> 
+
+
+
+ Client id : 1079952109110-1pipbjjc2bcl338ti4h09mn1n71ek6rn.apps.googleusercontent.com
+ Client Secret : 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
+ Refresh token : 1//04RcHIWwr3MKiCgYIARAAGAQSNwF-L9IrhY_YpTARmDiJ1GYBtirdT5t5jM3icUtyqdgHGCyEbTAobmXUq9Jxa7YtYF-BMPjcdSs

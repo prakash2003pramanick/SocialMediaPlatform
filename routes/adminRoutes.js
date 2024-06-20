@@ -4,21 +4,22 @@ const { approveSociety, refuseSociety } = require('../controllers/admin/societyC
 const superAdminController = require('../controllers/admin/adminController');
 const { verifyToken } = require('../middleware/verifyToken');
 
-router.post('/approve-society', verifyToken, approveSociety);
-router.post('/refuse-society', verifyToken, refuseSociety);
+router.post('/approve-society', verifyToken, approveSociety); // tested
+router.post('/refuse-society', verifyToken, refuseSociety); // tested
 
 // Create an admin
-router.post('/create-admin', verifyToken, superAdminController.createAdmin);
+router.post('/create-admin', verifyToken, superAdminController.createAdmin); //tested
 // Update an admin
-router.post('/update-admin', verifyToken, superAdminController.updateAdmin);
+router.post('/update-admin', verifyToken, superAdminController.updateAdmin); //tested
 // Delete an admin
-router.get('/delete-admin/:id', verifyToken, superAdminController.deleteAdmin);
-router.post('/delete-admin', verifyToken, superAdminController.deleteAdmin);
+router.delete('/delete-admin/:id', verifyToken, superAdminController.deleteAdmin); //tested
+router.post('/delete-admin', verifyToken, superAdminController.deleteAdmin); //tested
 
 // Get all the admin details
-router.get('/fetch-admin/:id', verifyToken, superAdminController.getAdmin);
-router.post('/fetch-admin', verifyToken, superAdminController.getAdmin);
-router.post('/fetch-all-admin',verifyToken,superAdminController.getAllAdmin);
+router.get('/fetch-admin/:id', verifyToken, superAdminController.getAdmin); //tested
+router.post('/fetch-admin', verifyToken, superAdminController.getAdmin); //tested
+router.get('/fetch-all-admin',verifyToken, superAdminController.getAllAdmin); //tested
+router.post('/fetch-admin-actions',verifyToken, superAdminController.getAdminActions); //allow fetch by email also <- not impelemted
 
 
 

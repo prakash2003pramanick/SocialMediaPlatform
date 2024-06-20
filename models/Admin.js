@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { ADMIN } = require('../enum/accessTypes.js');
 
+
 // Destructure `Schema` from `mongoose`
 const { Schema } = mongoose;
 
@@ -11,7 +12,7 @@ const AdminSchema = new Schema(
         profilephoto: String,
 
         access : { type: Number, default: ADMIN },
-        email: { type: String, unique: true },
+        email: { type: String },
         personal_email: { type: String },
         role: [String],
         password: String,
@@ -20,9 +21,7 @@ const AdminSchema = new Schema(
             public: { type: Boolean, default: false },
             username: { type: Boolean, default: true },
             personl_email: { type: Boolean, default: false },
-        },
-
-        actions : [{ type : Schema.Types.ObjectId, ref : "adminactions" }],
+        }
     },
     {
         collection: "admin"

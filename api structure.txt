@@ -33,14 +33,14 @@ Body:
         "github": "https://github.com/johndoe",
         "website": "https://johndoe.com"
     },
-    "societies": ["Tech Club", "Programming Society"],
+    "societies": ["Tech Club", "Programming society"],
     "skills": ["JavaScript", "HTML", "CSS"],
     "hobbies": ["Aamkhana", "nashekarna"],
     "projects": ["Personal Portfolio Website", "Online Store Application"]
 }
 
 2) login
-API :- http://localhost:8000/api/auth/login
+API :- http://localhost:8000/auth/login
 method:post
 header : 
 Content-type:application/json

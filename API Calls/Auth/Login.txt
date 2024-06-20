@@ -1,0 +1,12 @@
+2) login
+API :- http://localhost:8000/auth/login
+method:post
+header : 
+Content-type:application/json
+
+body:
+{
+    "type":"user",
+    "email": "prityanshu1@gmail.com",
+    "password": "123"
+}

@@ -13,7 +13,7 @@ const SocietiesSchema = new Schema(
         under: String, // Organizaiton / Institue under which the society is registered
         
 
-        access : { type: Number, default: SOCIETY }, //Society type
+        access : { type: Number, default: SOCIETY.NOT_APPROVED }, //society type
 
         email: { type: String, unique: true },
         bio: String,
@@ -40,6 +40,13 @@ const SocietiesSchema = new Schema(
         },
 
         members : [{
+            id : { type : Schema.Types.ObjectId, unique : true },
+            email:String,
+            position:{ type:String, default:"Executive" },
+        }],
+
+        pendingVerification : [{
+            id : { type : Schema.Types.ObjectId },
             email:String,
             position:{ type:String, default:"Executive" },
         }],
@@ -48,18 +55,16 @@ const SocietiesSchema = new Schema(
             event_id : { type : Schema.Types.ObjectId, ref : "Event"}
         }],
 
-        projects: [String],
-
-        approval: { 
-            status : {type : String, default : "pending"},
-            admin : {type : String, ref : 'admin'},
-            desc : {type : Schema.Types.ObjectId, ref : "admin_actions"}
-        },
+        projects: [{
+            name : String,
+            creator : String,
+            link : String
+        }],
     },
     {
-        collection: "Society"
+        collection: "society"
     }
 );
 
 // Pass the Model name and the schema to the model
-mongoose.model("Society", SocietiesSchema);
+mongoose.model("society", SocietiesSchema);

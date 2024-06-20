@@ -6,21 +6,7 @@ Heeaders :
 content-type : application/json
 Authorization : <jwt token>
 Method : Post
-{
-    "username": "admin3",
-    "name": "Vinit Agarwal",
-    "profilephoto": "https://example.com/profile.jpg",
-    "access":"5",
-    "email": "admin3@social.com",
-    "personal_email": "vinit@gmail.com",
-    "role": ["admin", "moderator"],
-    "password": "123",
-    "visibility": {
-        "public": true,
-        "username": true,
-        "personal_email": false
-    }
-}
+
 
 2) Update an admin
 API : http://localhost:8000/admin/create-admin

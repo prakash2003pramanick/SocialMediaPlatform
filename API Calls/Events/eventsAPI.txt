@@ -1,45 +1,61 @@
-5) create an event
+1) create an event
 API :- http://localhost:8000/event/create-event
 method: post
 header : 
 Content-type:application/json
 Authorization : <JWT token>
 {
-    "name": "Event 5",
-    "posterphoto": "https://example.com/poster.jpg",
-    "desc": "edited Description of the event",
-    "date_of_event": "2024-05-20T15:00:00Z",
+    "name": "soc 2 event",
+    "host": {
+        "email": "host@example.com"
+    },
+    "posterphoto": "https://example.com/path/to/poster.jpg",
+    "desc": "An annual conference showcasing the latest in technology and innovation.",
+    "date_of_event": "2024-06-15T09:00:00Z",
+    "poc": {
+        "name": "Jane Doe",
+        "phoneNo": "+1234567890",
+        "email": "janedoe@example.com"
+    },
     "hyperlink": "https://example.com/event-details",
     "visibility": "public",
-    "tags": ["tag1", "tag2"],
-    "poc":{
-        "name":"prakash",
-        "phoneNo": "1234567890",
-        "email":"xyz@kiit.ac.in"
-    }
-    
+    "tags": ["technology", "innovation", "conference"],
+    "status": "UPCOMING"
 }
 
-6) udpate an event
+2) udpate an event
 API :- http://localhost:8000/event/udpate-event
 method: post
 header : 
 Content-type:application/json
 Authorization : <JWT token>
 {
-    "eventId":"664607f54a149e616e228c28",
-    "newData" : {
-        "name": "Tech Conference",
-        "posterphoto": "https://example.com/poster.jpg",
-        "desc": "Join us for an exciting tech conference featuring industry experts.",
-        "phoneNo": "1234567890",
-        "hyperlink": "https://example.com/tech-conference",
-        "visibility": "public"
-    } 
+    "eventId":"665727eb34dae0f5295c71c0",
+    "newData":{
+        "name": "soc 7 event",
+        "host": {
+            "email": "host@example.com"
+        },
+        "posterphoto": "https://example.com/path/to/poster.jpg",
+        "desc": "An annual conference showcasing the latest in technology and innovation.",
+        "date_of_event": "2024-06-15T09:00:00Z",
+        "poc": {
+            "name": "Jane Doe",
+            "phoneNo": "+1234567890",
+            "email": "janedoe@example.com"
+        },
+        "hyperlink": "https://example.com/event-details",
+        "visibility": "public",
+        "tags": ["technology", "innovation", "conference"],
+        "status": "UPCOMING"
+    }
 }
+
 
 7) Delete an event
 method : delete
 API :- http://localhost:8000/event/delete-event/<objectID>
+
+
 
 8) Fetch all details of the event created by any ID

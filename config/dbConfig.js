@@ -7,8 +7,4 @@ const connectDB = async () => {
     }).catch(e => console.log(e));
 };
 
-
-
-
 module.exports = connectDB;
-

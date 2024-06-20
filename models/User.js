@@ -1,15 +1,5 @@
 const mongoose = require('mongoose');
-
-// const userSchema = new mongoose.Schema({
-//     fname: { type: String, required: true },
-//     lname: { type: String, required: true },
-//     email: { type: String, required: true, unique: true },
-//     phoneNo: { type: String, required: true },
-//     password: { type: String, required: true },
-//     interests: [{ type: String }]
-// });
-
-// module.exports = mongoose.model('UserInfo', userSchema);
+const USER = require("../enum/accessTypes");
 
 const UserDetailsSchema = new mongoose.Schema(
     {
@@ -18,7 +8,7 @@ const UserDetailsSchema = new mongoose.Schema(
         profilephoto: String, // URL of the image
         gender: String,
 
-        access : { type:Number, default : 1}, //User type
+        access : { type:Number, default : {USER}}, //User type
 
         email: { type: String, unique: true },
         bio: String,
@@ -54,9 +44,9 @@ const UserDetailsSchema = new mongoose.Schema(
         projects: [String]
     },
     {
-        collection: "UserInfo"
+        collection: "user"
     }
 );
 
 // Pass the Model name and the schema to the model
-mongoose.model("UserInfo", UserDetailsSchema);
+mongoose.model("user", UserDetailsSchema);
